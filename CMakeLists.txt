@@ -5,7 +5,7 @@ project(pat-to-chart)
 #set(SFML_STATIC_LIBRARIES TRUE)
 find_package(SFML COMPONENTS graphics window)
 
-set(SRC src/main.cpp)
+set(SRC src/main.cpp src/parser.cpp src/stitch.cpp)
 add_executable(pat-to-chart ${SRC})
 
 target_link_libraries(pat-to-chart sfml-graphics)

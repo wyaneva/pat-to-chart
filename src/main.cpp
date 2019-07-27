@@ -1,5 +1,6 @@
 #include <iostream>
 #include "SFML/Graphics.hpp"
+#include "parser.h"
 
 int main() {
 
@@ -9,6 +10,8 @@ int main() {
 
   sf::CircleShape circle(100.f);
   circle.setFillColor(sf::Color::Blue);
+
+  parsePattern("../patterns/ex1.pat");
 
   while(window.isOpen()) {
 
@@ -23,6 +26,5 @@ int main() {
     window.draw(circle);
     window.display();
   }
-
   return 0;
 }
