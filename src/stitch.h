@@ -3,14 +3,16 @@
 
 #include <string>
 
+enum StitchTypeUK { ch, chsp, dc, tr, dtr };
+
 class Stitch {
 
-  std::string name;
+  StitchTypeUK type;
   int offset;
 
 public:
-  Stitch(std::string name) : name(name), offset(1) {}
-  Stitch(std::string name, int offset) : name(name), offset(offset) {}
+  Stitch(StitchTypeUK type) : type(type), offset(1) {}
+  Stitch(StitchTypeUK type, int offset) : type(type), offset(offset) {}
 
   void print();
 };

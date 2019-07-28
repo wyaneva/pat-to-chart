@@ -3,6 +3,7 @@
 #include <list>
 #include <sstream>
 #include <string>
+#include "parser.h"
 #include "stitch.h"
 
 const int FAIL = 0;
@@ -15,7 +16,12 @@ int parseRow(std::istringstream &iss, Row &row) {
   std::string token;
   iss >> token;
 
-  std::cout << token << std::endl;
+  // find the first stitch
+  while(token.back() != ':') {
+    iss >> token;
+  }
+
+  //TODO: stitch group -- a list of stitches, but all of the ones with the exception of the first have offsets 0
 
   return SUCCESS;
 }
